@@ -4,11 +4,7 @@ import csv
 total_amt_profit_losses = 0
 number_of_months = 0
 
-def calculate(row, num_months):
-    num_months += 1
-    return int(row[1])
-
-budget_data_csv = os.path.join("PyBank","Resources","budget_data.csv")
+budget_data_csv = os.path.join("Resources","budget_data.csv")
 
 with open(budget_data_csv,mode="r",encoding='utf-8') as csvfile:
     budget_data_reader = csv.reader(csvfile,delimiter=',')
@@ -40,7 +36,7 @@ with open(budget_data_csv,mode="r",encoding='utf-8') as csvfile:
             dc_list[1] = sum_of_rows
             dc_list[0] = rows[i+1][0]
 
-    financial_analysis_txt = os.path.join("PyBank","Analysis","financial_analysis.txt")
+    financial_analysis_txt = os.path.join("Analysis","financial_analysis.txt")
     with open(financial_analysis_txt,mode="w") as txtfile:
         txtfile.write("\n Financial Analysis \n")
         txtfile.write("--------------------------\n")
